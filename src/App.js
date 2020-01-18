@@ -24,6 +24,43 @@ class App extends React.Component {
     };
   }
 
+  addNewToDo = newToDo => {
+    const newState = {
+      ...this.state,
+      toDoList: [
+        ...this.state.toDoList,
+        { name: newToDo, completed: false, id: Date.now() }
+      ]
+    };
+    this.setState(newState);
+  };
+
+  toggleComplete = id => {
+    const newState = {
+      ...this.state,
+      toDoList: this.state.toDoList.map(task => {
+        if (task.id === id) {
+          return {
+            ...task,
+            completed: !item.completed
+          };
+        }
+        return task;
+      })
+    };
+    this.setState(newState);
+  };
+
+  clearTask = () => {
+    const newState = {
+      ...this.state,
+      toDoList: this.state.toDoList.filter(task => {
+        return !task.completed;
+      })
+    };
+    this.setState(newState);
+  };
+
   render() {
     return (
       <div>
