@@ -18,6 +18,7 @@ class ToDoForm extends React.Component {
   };
 
   render() {
+    console.log("rendering form");
     return (
       <form onSubmit={this.handleSumbit}>
         <input
