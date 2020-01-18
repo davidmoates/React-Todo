@@ -3,6 +3,8 @@ import React from "react";
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
 
+import './components/Todo.css';
+
 const toDo = [
   {
     task: "Organize Garage",
@@ -33,7 +35,7 @@ class App extends React.Component {
       ...this.state,
       toDoList: [
         ...this.state.toDoList,
-        { name: newToDo, completed: false, id: Date.now() }
+        { task: newToDo, completed: false, id: Date.now() }
       ]
     };
     this.setState(newState);
