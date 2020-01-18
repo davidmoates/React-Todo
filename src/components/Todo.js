@@ -4,9 +4,9 @@ const Task = props => {
   return (
     <div
       onClick={event => props.toggleComplete(props.task.id)}
-      className={`item${props.item.completed ? " completed" : ""}`}
+      className={`task${props.tasks.completed ? " completed" : ""}`}
     >
-      <p>{props.task.task}</p>
+      <p>{props.tasks.task}</p>
     </div>
   );
 };

@@ -1,5 +1,8 @@
 import React from "react";
 
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
+
 const toDo = [
   {
     task: "Organize Garage",
@@ -43,7 +46,7 @@ class App extends React.Component {
         if (task.id === id) {
           return {
             ...task,
-            completed: !item.completed
+            completed: !task.completed
           };
         }
         return task;
